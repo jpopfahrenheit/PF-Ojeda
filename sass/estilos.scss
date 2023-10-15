@@ -1,25 +1,29 @@
-/* Color para cada pagina */
+/* Definir variables de color */
+$color-inicio: #ff583321;
+$color-nosotros: #33ff581f;
+$color-servicios: #5833ff13;
+$color-ejemplos: #f0f0f0;
+$color-contacto: #33ffff1a;
 
-/* página 1 */
-body.inicio {
-  background-color: #ff583321;
+/* Color para cada página */
+body {
+  &.inicio {
+    background-color: $color-inicio;
+  }
+  &.nosotros {
+    background-color: $color-nosotros;
+  }
+  &.servicios {
+    background-color: $color-servicios;
+  }
+  &.ejemplos {
+    background-color: $color-ejemplos;
+  }
+  &.contacto {
+    background-color: $color-contacto;
+  }
 }
-/* página 2 */
-body.nosotros {
-  background-color: #33ff581f;
-}
-/* página 3 */
-body.servicios {
-  background-color: #5833ff13;
-}
-/* página 4 */
-body.ejemplos {
-  background-color: #f0f0f0;
-}
-/* página 5 */
-body.contacto {
-  background-color: #33ffff1a;
-}
+
 /* FIN Color para cada página */ 
 
 .mi_textarea {
@@ -38,46 +42,43 @@ body.contacto {
   width: 100%;
   padding-bottom: 56.25%;
 
-  /* para relacion 16:9 */
+  /* para relación 16:9 */
+  
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
 }
 
-/* estilo iframe dentro del contenedor */
-#powerbi-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-}
 /* FIN ENCAJAR IFRAME */
-
-
 
 /* ANIMAR BANNER */
 
 .superposicion {
   position: relative;
   overflow: hidden;
-}
 
-.superposicion:hover::after {
-  transform: translateY(0);
-}
+  &:hover::after {
+    transform: translateY(0);
+  }
 
-.superposicion::after {
-  content: attr(data-content); /* Utilizamos un atributo personalizado para el contenido */
-  font-size: 2rem;
-  color: #fff;
-  background-color: #16456198;
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  transform: translateY(100%);
-  transition: transform 0.3s;
+  &::after {
+    content: attr(data-content); /* Utilizamos un atributo personalizado para el contenido */
+    font-size: 2rem;
+    color: #fff;
+    background-color: #16456198;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+  }
 }
-
 
 /* FIN ANIMAR BANNER */
 
